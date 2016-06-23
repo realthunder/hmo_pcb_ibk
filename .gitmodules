@@ -1,3 +1,0 @@
-[submodule "backlight"]
-	path = backlight
-	url = git@github.com:realthunder/hmo_pcb_backlight.git
