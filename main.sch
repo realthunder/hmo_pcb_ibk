@@ -298,7 +298,7 @@ F 3 "" H 8750 2650 50  0000 C CNN
 $EndComp
 Text Label 8050 2600 0    60   ~ 0
 VMOT
-Text Label 5100 2250 2    60   ~ 0
+Text Label 5100 1650 2    60   ~ 0
 SCLK
 $Comp
 L 74AHC1G04 U1
@@ -379,7 +379,7 @@ F 3 "" H 9900 3150 50  0000 C CNN
 	1    9900 3150
 	1    0    0    -1  
 $EndComp
-Text Label 5100 2450 2    60   ~ 0
+Text Label 5100 1450 2    60   ~ 0
 MT_STOP
 Text Label 2300 4150 2    60   ~ 0
 BL_CS
@@ -387,23 +387,23 @@ Text Label 3000 4400 2    60   ~ 0
 SCLK
 Text Label 3000 4900 2    60   ~ 0
 MISO
-Text Label 5100 2150 2    60   ~ 0
+Text Label 5100 1750 2    60   ~ 0
 BL_CS
-Text Label 5100 2350 2    60   ~ 0
+Text Label 5100 1550 2    60   ~ 0
 MISO
 Text Label 5050 4200 2    60   ~ 0
 SHD_DRV
-Text Label 3400 6150 2    60   ~ 0
+Text Label 3700 6150 2    60   ~ 0
 STEP_STOP
 $Comp
 L GND #PWR016
 U 1 1 572B29C3
-P 3400 6250
-F 0 "#PWR016" H 3400 6000 50  0001 C CNN
-F 1 "GND" H 3400 6100 50  0000 C CNN
-F 2 "" H 3400 6250 50  0000 C CNN
-F 3 "" H 3400 6250 50  0000 C CNN
-	1    3400 6250
+P 3700 6250
+F 0 "#PWR016" H 3700 6000 50  0001 C CNN
+F 1 "GND" H 3700 6100 50  0000 C CNN
+F 2 "" H 3700 6250 50  0000 C CNN
+F 3 "" H 3700 6250 50  0000 C CNN
+	1    3700 6250
 	1    0    0    -1  
 $EndComp
 Text Label 3800 1850 0    60   ~ 0
@@ -511,12 +511,12 @@ Text Label 5100 2050 2    60   ~ 0
 $Comp
 L CONN_01X02 #P2
 U 1 1 57326719
-P 3600 6200
-F 0 "#P2" H 3600 6050 50  0001 C CNN
-F 1 "CON_STEP_STOP" V 3750 6200 50  0000 C CNN
-F 2 "~" H 3600 6200 50  0001 C CNN
-F 3 "" H 3600 6200 50  0000 C CNN
-	1    3600 6200
+P 3900 6200
+F 0 "#P2" H 3900 6050 50  0001 C CNN
+F 1 "CON_STEP_STOP" V 4050 6200 50  0000 C CNN
+F 2 "~" H 3900 6200 50  0001 C CNN
+F 3 "" H 3900 6200 50  0000 C CNN
+	1    3900 6200
 	1    0    0    1   
 $EndComp
 $Comp
@@ -591,13 +591,13 @@ BL_DO
 $Comp
 L CONN_01X07 P1
 U 1 1 573F4852
-P 5300 2150
-F 0 "P1" H 5300 2550 50  0000 C CNN
-F 1 "CONN_ProMini_Up" V 5400 2150 50  0000 C CNN
-F 2 "Connectors_Molex:Molex_PicoBlade_53261-0771" H 5300 2150 50  0001 C CNN
-F 3 "" H 5300 2150 50  0000 C CNN
-	1    5300 2150
-	1    0    0    -1  
+P 5300 1750
+F 0 "P1" H 5300 2150 50  0000 C CNN
+F 1 "CONN_ProMini_Up" V 5400 1750 50  0000 C CNN
+F 2 "Connectors_Molex:Molex_PicoBlade_53261-0771" H 5300 1750 50  0001 C CNN
+F 3 "" H 5300 1750 50  0000 C CNN
+	1    5300 1750
+	1    0    0    1   
 $EndComp
 $Comp
 L CONN_01X02 #P3
@@ -855,7 +855,7 @@ Wire Notes Line
 Wire Notes Line
 	9850 3650 8800 3650
 Text Notes 8850 4200 0    60   ~ 0
-User receptacle here
+Use receptacle here
 Wire Wire Line
 	8350 3350 8650 3350
 $Comp
