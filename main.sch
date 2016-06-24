@@ -325,12 +325,12 @@ $EndComp
 $Comp
 L VCC #PWR012
 U 1 1 572A6F23
-P 8100 3800
-F 0 "#PWR012" H 8100 3650 50  0001 C CNN
-F 1 "VCC" H 8100 3950 50  0000 C CNN
-F 2 "" H 8100 3800 50  0000 C CNN
-F 3 "" H 8100 3800 50  0000 C CNN
-	1    8100 3800
+P 8100 3700
+F 0 "#PWR012" H 8100 3550 50  0001 C CNN
+F 1 "VCC" H 8100 3850 50  0000 C CNN
+F 2 "" H 8100 3700 50  0000 C CNN
+F 3 "" H 8100 3700 50  0000 C CNN
+	1    8100 3700
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -360,23 +360,23 @@ LIGHT
 $Comp
 L R R2
 U 1 1 572A7BCC
-P 9900 3300
-F 0 "R2" V 9800 3300 50  0000 C CNN
-F 1 "10K" V 9900 3300 50  0000 C CNN
-F 2 "Resistors_SMD:R_0402" V 9830 3300 50  0001 C CNN
-F 3 "" H 9900 3300 50  0000 C CNN
-	1    9900 3300
-	1    0    0    -1  
+P 8350 3800
+F 0 "R2" V 8250 3800 50  0000 C CNN
+F 1 "10K" V 8350 3800 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" V 8280 3800 50  0001 C CNN
+F 3 "" H 8350 3800 50  0000 C CNN
+	1    8350 3800
+	0    1    1    0   
 $EndComp
 $Comp
 L VCC #PWR015
 U 1 1 572A7C9B
-P 9900 3150
-F 0 "#PWR015" H 9900 3000 50  0001 C CNN
-F 1 "VCC" H 9900 3300 50  0000 C CNN
-F 2 "" H 9900 3150 50  0000 C CNN
-F 3 "" H 9900 3150 50  0000 C CNN
-	1    9900 3150
+P 9750 3100
+F 0 "#PWR015" H 9750 2950 50  0001 C CNN
+F 1 "VCC" H 9750 3250 50  0000 C CNN
+F 2 "" H 9750 3100 50  0000 C CNN
+F 3 "" H 9750 3100 50  0000 C CNN
+	1    9750 3100
 	1    0    0    -1  
 $EndComp
 Text Label 5100 1450 2    60   ~ 0
@@ -625,6 +625,32 @@ F 3 "" H 5450 5200 50  0000 C CNN
 	1    5450 5200
 	1    0    0    -1  
 $EndComp
+Text Notes 3200 5800 0    60   ~ 0
+Make this receptacle
+$Comp
+L CON_MT P3
+U 1 1 573FEAA2
+P 9100 3250
+F 0 "P3" H 9100 3500 60  0000 C CNN
+F 1 "CON_MT" H 9100 3000 60  0000 C CNN
+F 2 "Connectors_Molex:Molex_PicoBlade_53398-0771" H 9100 3150 60  0001 C CNN
+F 3 "" H 9100 3150 60  0000 C CNN
+	1    9100 3250
+	1    0    0    -1  
+$EndComp
+Text Notes 8850 4200 0    60   ~ 0
+Use receptacle here
+$Comp
+L CONN_01X05 P2
+U 1 1 57402244
+P 5800 2150
+F 0 "P2" H 5800 1850 50  0000 C CNN
+F 1 "CONN_ProMini_Down2" V 5900 2300 50  0000 C CNN
+F 2 "Connectors_Molex:Molex_Panelmate-53780-0570_05x1.25mm_Angled" H 5800 2150 50  0001 C CNN
+F 3 "" H 5800 2150 50  0000 C CNN
+	1    5800 2150
+	-1   0    0    1   
+$EndComp
 Wire Wire Line
 	5250 900  5250 1000
 Wire Wire Line
@@ -651,7 +677,7 @@ Wire Wire Line
 Wire Wire Line
 	7200 4400 7700 4400
 Wire Wire Line
-	8100 3800 8100 4200
+	8100 3700 8100 4200
 Wire Wire Line
 	2300 4150 3450 4150
 Wire Wire Line
@@ -681,16 +707,12 @@ Wire Wire Line
 Wire Wire Line
 	3500 3800 3750 3800
 Connection ~ 8750 2450
-Connection ~ 8100 3850
-Wire Wire Line
-	7800 3850 8100 3850
 Wire Wire Line
 	9000 1800 9350 1800
 Wire Wire Line
 	9350 1800 9350 1900
 Wire Wire Line
 	9000 1900 9250 1900
-Connection ~ 9900 3450
 Wire Wire Line
 	8050 2600 8300 2600
 Wire Wire Line
@@ -702,7 +724,6 @@ Wire Wire Line
 	4700 4300 4700 5150
 Wire Wire Line
 	6850 1850 6850 2550
-Connection ~ 9900 3150
 Wire Wire Line
 	6350 1200 6350 1950
 Wire Wire Line
@@ -800,19 +821,6 @@ Wire Notes Line
 	4200 6650 4200 5600
 Wire Notes Line
 	4200 5600 3150 5600
-Text Notes 3200 5800 0    60   ~ 0
-Make this receptacle
-$Comp
-L CON_MT P3
-U 1 1 573FEAA2
-P 9100 3250
-F 0 "P3" H 9100 3500 60  0000 C CNN
-F 1 "CON_MT" H 9100 3000 60  0000 C CNN
-F 2 "Connectors_Molex:Molex_PicoBlade_53398-0771" H 9100 3150 60  0001 C CNN
-F 3 "" H 9100 3150 60  0000 C CNN
-	1    9100 3250
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	8050 2750 8300 2750
 Wire Wire Line
@@ -821,26 +829,16 @@ Wire Wire Line
 	8300 3150 8650 3150
 Connection ~ 8300 2750
 Wire Wire Line
-	8600 4400 9900 4400
+	9900 4400 8600 4400
 Wire Wire Line
-	9900 4400 9900 3450
+	9900 3250 9900 4400
 Wire Wire Line
-	9900 3150 9550 3150
-Wire Wire Line
-	9550 3250 9700 3250
-Wire Wire Line
-	9700 3250 9700 3450
-Wire Wire Line
-	9700 3450 9900 3450
+	9550 3250 9900 3250
 Wire Wire Line
 	8650 3250 7400 3250
 Wire Wire Line
 	7400 3250 7400 4400
 Connection ~ 7400 4400
-Wire Wire Line
-	8350 3350 8350 3800
-Wire Wire Line
-	8350 3800 8900 3800
 Wire Wire Line
 	8900 3900 8700 3900
 Wire Wire Line
@@ -854,19 +852,20 @@ Wire Notes Line
 	9850 4300 9850 3650
 Wire Notes Line
 	9850 3650 8800 3650
-Text Notes 8850 4200 0    60   ~ 0
-Use receptacle here
 Wire Wire Line
-	8350 3350 8650 3350
-$Comp
-L CONN_01X05 P2
-U 1 1 57402244
-P 5800 2150
-F 0 "P2" H 5800 1850 50  0000 C CNN
-F 1 "CONN_ProMini_Down2" V 5900 2300 50  0000 C CNN
-F 2 "Connectors_Molex:Molex_Panelmate-53780-0570_05x1.25mm_Angled" H 5800 2150 50  0001 C CNN
-F 3 "" H 5800 2150 50  0000 C CNN
-	1    5800 2150
-	-1   0    0    1   
-$EndComp
+	7800 3850 7800 3800
+Wire Wire Line
+	7800 3800 8200 3800
+Connection ~ 8100 3800
+Wire Wire Line
+	8500 3800 8900 3800
+Wire Wire Line
+	8600 3800 8600 3350
+Wire Wire Line
+	8600 3350 8650 3350
+Connection ~ 8600 3800
+Wire Wire Line
+	9750 3100 9750 3150
+Wire Wire Line
+	9750 3150 9550 3150
 $EndSCHEMATC
