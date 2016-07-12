@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:ibk-rescue
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -34,6 +35,7 @@ LIBS:Power_Management
 LIBS:sensors
 LIBS:parts
 LIBS:74xgxx
+LIBS:ibk-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -58,17 +60,6 @@ F 2 "perfboard:SN74LVC2G126_DCU_8" H 3450 4400 50  0001 C CNN
 F 3 "" H 3450 4400 50  0000 C CNN
 	2    3450 4400
 	1    0    0    -1  
-$EndComp
-$Comp
-L 74LVC2G126 U4
-U 1 1 57296E0D
-P 3400 4900
-F 0 "U4" H 3300 5050 50  0000 C CNN
-F 1 "74LVC2G126" H 3400 4750 50  0000 C CNN
-F 2 "perfboard:SN74LVC2G126_DCU_8" H 3400 4900 50  0001 C CNN
-F 3 "" H 3400 4900 50  0000 C CNN
-	1    3400 4900
-	-1   0    0    1   
 $EndComp
 $Comp
 L DRV8838 U3
@@ -357,17 +348,6 @@ $EndComp
 Text Label 6000 2250 0    60   ~ 0
 LIGHT
 $Comp
-L R R2
-U 1 1 572A7BCC
-P 8050 4250
-F 0 "R2" V 7950 4250 50  0000 C CNN
-F 1 "10K" V 8050 4250 50  0000 C CNN
-F 2 "Resistors_SMD:R_0402" V 7980 4250 50  0001 C CNN
-F 3 "" H 8050 4250 50  0000 C CNN
-	1    8050 4250
-	0    1    1    0   
-$EndComp
-$Comp
 L VCC #PWR015
 U 1 1 572A7C9B
 P 8100 3050
@@ -379,17 +359,15 @@ F 3 "" H 8100 3050 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 5100 1450 2    60   ~ 0
-MT_STOP
+MT_EN
 Text Label 2300 4150 2    60   ~ 0
 BL_CS
 Text Label 3000 4400 2    60   ~ 0
 SCLK
-Text Label 3000 4900 2    60   ~ 0
-MISO
 Text Label 5100 1750 2    60   ~ 0
 BL_CS
 Text Label 5100 1550 2    60   ~ 0
-MISO
+~SHD_SLP
 Text Label 5050 4200 2    60   ~ 0
 SHD_DRV
 Text Label 3700 6150 2    60   ~ 0
@@ -466,8 +444,6 @@ F 3 "" H 8100 3250 50  0000 C CNN
 	1    8100 3250
 	1    0    0    -1  
 $EndComp
-Text Label 7700 1550 2    60   ~ 0
-~STEP_SLP
 $Comp
 L PWR_FLAG #FLG021
 U 1 1 572D9294
@@ -530,16 +506,16 @@ F 3 "" H 5250 4150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 8650 3650 2    60   ~ 0
-MT_STOP
+MT_EN
 $Comp
 L VCC #PWR024
 U 1 1 5729AAD0
-P 6550 1900
-F 0 "#PWR024" H 6550 1750 50  0001 C CNN
-F 1 "VCC" H 6550 2050 50  0000 C CNN
-F 2 "" H 6550 1900 50  0000 C CNN
-F 3 "" H 6550 1900 50  0000 C CNN
-	1    6550 1900
+P 6550 1700
+F 0 "#PWR024" H 6550 1550 50  0001 C CNN
+F 1 "VCC" H 6550 1850 50  0000 C CNN
+F 2 "" H 6550 1700 50  0000 C CNN
+F 3 "" H 6550 1700 50  0000 C CNN
+	1    6550 1700
 	1    0    0    -1  
 $EndComp
 Text Label 6850 4800 2    60   ~ 0
@@ -585,8 +561,6 @@ F 3 "" H 5250 5350 50  0000 C CNN
 $EndComp
 Text Label 5050 4000 2    60   ~ 0
 BL_CI
-Text Label 5050 4100 2    60   ~ 0
-BL_DO
 $Comp
 L CONN_01X07 P1
 U 1 1 573F4852
@@ -601,12 +575,12 @@ $EndComp
 $Comp
 L CONN_01X02 P?
 U 1 1 573F5023
-P 8800 4750
-F 0 "P?" H 8800 4600 50  0000 C CNN
-F 1 "CON_MT_STOP" H 8800 4900 50  0000 C CNN
-F 2 "Connectors_Molex:Molex_PicoBlade_53047-0210" H 8800 4750 50  0001 C CNN
-F 3 "" H 8800 4750 50  0000 C CNN
-	1    8800 4750
+P 8900 4300
+F 0 "P?" H 8900 4150 50  0000 C CNN
+F 1 "CON_MT_STOP" H 8900 4450 50  0000 C CNN
+F 2 "Connectors_Molex:Molex_PicoBlade_53047-0210" H 8900 4300 50  0001 C CNN
+F 3 "" H 8900 4300 50  0000 C CNN
+	1    8900 4300
 	1    0    0    1   
 $EndComp
 NoConn ~ 2500 2050
@@ -622,6 +596,58 @@ F 1 "CONN_SRV" V 5550 5200 50  0000 C CNN
 F 2 "Connectors_Molex:Molex_PicoBlade_53048-0410" H 5450 5200 50  0001 C CNN
 F 3 "" H 5450 5200 50  0000 C CNN
 	1    5450 5200
+	1    0    0    -1  
+$EndComp
+Text Notes 3200 5800 0    60   ~ 0
+Make this receptacle
+Text Notes 9750 3650 0    60   ~ 0
+Use receptacles here
+$Comp
+L CONN_01X05 P2
+U 1 1 57402244
+P 5800 2150
+F 0 "P2" H 5800 1850 50  0000 C CNN
+F 1 "CONN_ProMini_Down2" V 5900 2300 50  0000 C CNN
+F 2 "Connectors_Molex:Molex_Panelmate-53780-0570_05x1.25mm_Angled" H 5800 2150 50  0001 C CNN
+F 3 "" H 5800 2150 50  0000 C CNN
+	1    5800 2150
+	-1   0    0    1   
+$EndComp
+Text Label 8650 3350 2    60   ~ 0
+SOL_DIR
+Text Label 8650 3450 2    60   ~ 0
+SOL_EN
+$Comp
+L CONN_01X02 #P?
+U 1 1 576CC17A
+P 10000 3400
+F 0 "#P?" H 10000 3250 50  0001 C CNN
+F 1 "CON_SOL" H 10250 3400 50  0000 C CNN
+F 2 "perfboard:Pin_Header_Straight_1x02_Pitch1.27mm" H 10000 3400 50  0001 C CNN
+F 3 "" H 10000 3400 50  0000 C CNN
+	1    10000 3400
+	1    0    0    1   
+$EndComp
+$Comp
+L CONN_01X02 #P?
+U 1 1 576CC1D5
+P 10000 3100
+F 0 "#P?" H 10000 2950 50  0001 C CNN
+F 1 "CON_MT" H 10200 3100 50  0000 C CNN
+F 2 "perfboard:Pin_Header_Straight_1x02_Pitch1.27mm" H 10000 3100 50  0001 C CNN
+F 3 "" H 10000 3100 50  0000 C CNN
+	1    10000 3100
+	1    0    0    1   
+$EndComp
+$Comp
+L CON_POLOLU_DRV8835-RESCUE-ibk P?
+U 1 1 576CD25C
+P 9100 3250
+F 0 "P?" H 9100 3600 60  0000 C CNN
+F 1 "CON_POLOLU_DRV8835" H 9100 2700 60  0000 C CNN
+F 2 "Connectors_Molex:Molex_PicoBlade_53398-0771" H 9000 3100 60  0001 C CNN
+F 3 "" H 9000 3100 60  0000 C CNN
+	1    9100 3250
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -656,18 +682,7 @@ Wire Wire Line
 Wire Wire Line
 	3450 4150 3450 4200
 Wire Wire Line
-	3750 4900 3750 4500
-Wire Wire Line
 	3150 4400 3000 4400
-Wire Wire Line
-	3750 4900 3700 4900
-Connection ~ 2600 4150
-Wire Wire Line
-	2600 4150 2600 5100
-Wire Wire Line
-	2600 5100 3400 5100
-Wire Wire Line
-	3150 4900 3000 4900
 Wire Wire Line
 	8050 2450 9050 2450
 Wire Wire Line
@@ -682,8 +697,6 @@ Wire Wire Line
 Connection ~ 8750 2450
 Connection ~ 7750 4250
 Wire Wire Line
-	7450 4250 7900 4250
-Wire Wire Line
 	9000 1800 9350 1800
 Wire Wire Line
 	9350 1800 9350 1900
@@ -693,13 +706,9 @@ Wire Wire Line
 	8050 2600 8300 2600
 Wire Wire Line
 	3700 4400 4200 4400
-Wire Wire Line
-	3750 4500 4300 4500
 Connection ~ 6550 1200
 Wire Wire Line
 	4700 4300 4700 5150
-Wire Wire Line
-	6850 1850 6850 2550
 Wire Wire Line
 	6350 1200 6350 1950
 Wire Wire Line
@@ -711,20 +720,15 @@ Wire Wire Line
 Wire Wire Line
 	6350 3400 6050 3400
 Wire Wire Line
-	7700 1850 6850 1850
-Wire Wire Line
 	6000 2150 6850 2150
-Connection ~ 6850 2150
 Wire Wire Line
-	6000 2050 6550 2050
+	6550 2050 6000 2050
 Wire Wire Line
-	6550 2050 6550 1900
+	6550 1700 6550 2050
 Wire Wire Line
 	3800 1850 5100 1850
 Wire Wire Line
 	3800 1950 5100 1950
-Wire Wire Line
-	5100 2050 3800 2050
 Wire Wire Line
 	4200 2150 4200 2550
 Wire Notes Line
@@ -782,10 +786,6 @@ Wire Wire Line
 Wire Wire Line
 	4200 4000 5050 4000
 Wire Wire Line
-	5050 4100 4300 4100
-Wire Wire Line
-	4300 4100 4300 4500
-Wire Wire Line
 	4800 5050 5250 5050
 Wire Wire Line
 	4700 5150 5250 5150
@@ -797,66 +797,14 @@ Wire Notes Line
 	4200 6650 4200 5600
 Wire Notes Line
 	4200 5600 3150 5600
-Text Notes 3200 5800 0    60   ~ 0
-Make this receptacle
 Wire Wire Line
 	8050 2750 8300 2750
 Connection ~ 8300 2750
 Connection ~ 7050 4800
-Text Notes 9750 3650 0    60   ~ 0
-Use receptacles here
-$Comp
-L CONN_01X05 P2
-U 1 1 57402244
-P 5800 2150
-F 0 "P2" H 5800 1850 50  0000 C CNN
-F 1 "CONN_ProMini_Down2" V 5900 2300 50  0000 C CNN
-F 2 "Connectors_Molex:Molex_Panelmate-53780-0570_05x1.25mm_Angled" H 5800 2150 50  0001 C CNN
-F 3 "" H 5800 2150 50  0000 C CNN
-	1    5800 2150
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	8300 2600 8300 3050
 Wire Wire Line
 	8300 3050 8650 3050
-Text Label 8650 3350 2    60   ~ 0
-SOL_DIR
-Text Label 8650 3450 2    60   ~ 0
-SOL_EN
-$Comp
-L CONN_01X02 #P?
-U 1 1 576CC17A
-P 10000 3400
-F 0 "#P?" H 10000 3250 50  0001 C CNN
-F 1 "CON_SOL" H 10250 3400 50  0000 C CNN
-F 2 "perfboard:Pin_Header_Straight_1x02_Pitch1.27mm" H 10000 3400 50  0001 C CNN
-F 3 "" H 10000 3400 50  0000 C CNN
-	1    10000 3400
-	1    0    0    1   
-$EndComp
-$Comp
-L CONN_01X02 #P?
-U 1 1 576CC1D5
-P 10000 3100
-F 0 "#P?" H 10000 2950 50  0001 C CNN
-F 1 "CON_MT" H 10200 3100 50  0000 C CNN
-F 2 "perfboard:Pin_Header_Straight_1x02_Pitch1.27mm" H 10000 3100 50  0001 C CNN
-F 3 "" H 10000 3100 50  0000 C CNN
-	1    10000 3100
-	1    0    0    1   
-$EndComp
-$Comp
-L CON_POLOLU_DRV8835 P?
-U 1 1 576CD25C
-P 9100 3250
-F 0 "P?" H 9100 3600 60  0000 C CNN
-F 1 "CON_POLOLU_DRV8835" H 9100 2700 60  0000 C CNN
-F 2 "Connectors_Molex:Molex_PicoBlade_53398-0771" H 9000 3100 60  0001 C CNN
-F 3 "" H 9000 3100 60  0000 C CNN
-	1    9100 3250
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	7050 4800 7050 3550
 Wire Wire Line
@@ -892,14 +840,40 @@ Wire Notes Line
 Wire Notes Line
 	10850 2950 9650 2950
 Wire Wire Line
-	8250 4800 8600 4800
-Wire Wire Line
 	8650 3650 8350 3650
 Wire Wire Line
-	8350 3650 8350 4700
+	6850 2150 6850 2550
 Wire Wire Line
-	8350 4700 8600 4700
+	3800 2050 5100 2050
+$Comp
+L VCC #PWR?
+U 1 1 577FA6F1
+P 7450 1500
+F 0 "#PWR?" H 7450 1350 50  0001 C CNN
+F 1 "VCC" H 7450 1650 50  0000 C CNN
+F 2 "" H 7450 1500 50  0000 C CNN
+F 3 "" H 7450 1500 50  0000 C CNN
+	1    7450 1500
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
-	8200 4250 8350 4250
-Connection ~ 8350 4250
+	7450 1500 7450 1550
+Wire Wire Line
+	7450 1550 7700 1550
+Text Label 7700 1850 2    60   ~ 0
+~SHD_SLP
+Wire Wire Line
+	7450 4250 7750 4250
+Wire Notes Line
+	8250 4800 8400 4800
+Wire Notes Line
+	8400 4800 8400 5300
+Text Notes 7750 5650 0    60   ~ 0
+Inverter abandoned.\nUse MCU output pin for ~MT_DIR,\nso that we can make it input and set\nMT_EN as output to force stop motor.
+Wire Wire Line
+	8350 3650 8350 4250
+Wire Wire Line
+	8350 4250 8700 4250
+Text Label 8700 4350 2    60   ~ 0
+MT_DIR
 $EndSCHEMATC
